@@ -1,4 +1,14 @@
 /* ================= GLOBAL ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
 body{
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #f6f7ff, #eef0ff);
@@ -89,7 +99,7 @@ nav a:hover::after{
 
 .hero-name{
   font-family:'Great Vibes', cursive;
-  font-size:72px;
+  font-size:clamp(2.5rem,6vw,4.5rem);
 }
 
 .typing-role{
@@ -122,8 +132,9 @@ nav a:hover::after{
 
 /* IMAGE */
 .image-container{
-  width:420px;
-  height:580px;
+  width:100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
   border-radius:20px;
   overflow:hidden;
   box-shadow:0 30px 60px rgba(0,0,0,0.1);
@@ -137,7 +148,7 @@ nav a:hover::after{
 
 /* ================= SECTION TITLE ================= */
 .section-title{
-  font-size:48px;
+  font-size:clamp(2rem,5vw,3rem);
   font-weight:700;
   margin:100px 10% 40px;
 }
@@ -231,12 +242,12 @@ nav a:hover::after{
 }
 
 .project-number{
-  font-size:70px;
+  font-size:clamp(2.5rem,6vw,4.5rem);
   color:#e5e7eb;
 }
 
 .project-title{
-  font-size:36px;
+  font-size:clamp(2rem,5vw,3rem);
 }
 
 .project-role{
@@ -485,4 +496,74 @@ nav a:hover::after{
 }
 html{
   scroll-behavior:smooth;
+}
+@media screen and (max-width:768px){
+
+    header{
+        flex-direction:column;
+        height:auto;
+        padding:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+        margin-top:10px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:40px;
+        padding:120px 5% 60px;
+    }
+
+    .hero-social{
+        justify-content:center;
+    }
+
+    .project-full{
+        grid-template-columns:1fr;
+        gap:30px;
+        min-height:auto;
+        padding:40px 5%;
+    }
+
+    .project-left,
+    .project-right{
+        grid-column:auto;
+        grid-row:auto;
+    }
+
+    .project-title{
+        font-size:28px;
+    }
+
+    .project-number{
+        font-size:50px;
+    }
+
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+
+    .resume-banner{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+    .section-title{
+        margin:60px 5% 30px;
+    }
+
+    .contact-social,
+    .footer-social{
+        justify-content:center;
+    }
+
+    .footer{
+        text-align:center;
+    }
 }
